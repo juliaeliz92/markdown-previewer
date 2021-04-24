@@ -1,4 +1,12 @@
-# Getting Started with Create React App
+# Getting Started with Markdown App
+
+Hi, this is a small project I worked on using React, Nodejs, HTML and Sass. 
+
+The main objective is to convert markdown text input given in the editor into HTML content and display in a preview.
+
+I used a npm package called `marked` to convert the text. 
+
+Here are the instructions to run the project.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
