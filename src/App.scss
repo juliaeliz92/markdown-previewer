@@ -1,0 +1,110 @@
+$full: 100%;
+$panel-min-width: 50vw;
+$panel-max-width: 90vw;
+$panel-min-height: 40vh;
+$panel-max-height: 90vh;
+$header-height: 5vh;
+
+.App {
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.panel-container {
+  border: 5px solid blue;
+  border-top-width: 0px;
+  margin: 15px;
+  overflow: hidden;
+  width: $panel-min-width;
+  height: $panel-min-height;
+  .body-container {
+    height: $panel-min-height - $header-height - 1.5vh;
+  }
+  .panel-header {
+    background-color: blue;
+    min-height: $header-height;
+    padding: 5px 2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  textarea {
+    resize: none;
+    width: $full;
+    height: $full;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box; 
+  }
+  .panel-button:hover {
+    color: black;
+    cursor: pointer;
+  }
+
+  #preview {
+    color: white;
+    overflow: auto;
+  }
+}
+
+.minimize-panel {
+  animation-name: minimize;
+  animation-duration: 1s;
+  width: $panel-min-width;
+  height: $panel-min-height;
+  .body-container {
+    height: $panel-min-height - $header-height - 1.5vh;
+  }
+}
+
+.maximize-panel {
+  animation-name: maximize;
+  animation-duration: 1s;
+  width: $panel-max-width;
+  height: $panel-max-height;
+  .body-container {
+    height: $panel-max-height - $header-height - 1.5vh;
+  }
+}
+
+@keyframes maximize {
+  from {
+    width: $panel-min-width;
+    height: $panel-min-height;
+    .body-container {
+      height: $panel-min-height - $header-height - 1.5vh;
+    }
+  }
+  to {
+    width: $panel-max-width;
+    height: $panel-max-height;
+    .body-container {
+      height: $panel-max-height - $header-height - 1.5vh;
+    }
+  }
+}
+
+@keyframes minimize {
+  from {
+    width: $panel-max-width;
+    height: $panel-max-height;
+    .body-container {
+      height: $panel-max-height - $header-height - 1.5vh;
+    }
+  }
+  to {
+    width: $panel-min-width;
+    height: $panel-min-height;
+    .body-container {
+      height: $panel-min-height - $header-height - 1.5vh;
+    }
+  }
+}
+
+
