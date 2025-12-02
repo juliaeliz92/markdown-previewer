@@ -54,56 +54,48 @@ $header-height: 5vh;
 }
 
 .minimize-panel {
-  animation-name: minimize;
-  animation-duration: 1s;
   width: $panel-min-width;
   height: $panel-min-height;
   .body-container {
-    height: $panel-min-height - $header-height - 1.5vh;
+    animation-name: minimize;
+    animation-duration: 1s;
   }
 }
 
 .maximize-panel {
-  animation-name: maximize;
-  animation-duration: 1s;
+ 
   width: $panel-max-width;
   height: $panel-max-height;
   .body-container {
     height: $panel-max-height - $header-height - 1.5vh;
+    animation-name: maximize;
+    animation-duration: 1s;
   }
 }
 
 @keyframes maximize {
-  from {
-    width: $panel-min-width;
-    height: $panel-min-height;
-    .body-container {
+  0% {
+
       height: $panel-min-height - $header-height - 1.5vh;
-    }
+    
   }
-  to {
-    width: $panel-max-width;
-    height: $panel-max-height;
-    .body-container {
+  100% {
+    
       height: $panel-max-height - $header-height - 1.5vh;
-    }
+    
   }
 }
 
 @keyframes minimize {
-  from {
-    width: $panel-max-width;
-    height: $panel-max-height;
-    .body-container {
+  0% {
+   
       height: $panel-max-height - $header-height - 1.5vh;
-    }
+    
   }
-  to {
-    width: $panel-min-width;
-    height: $panel-min-height;
-    .body-container {
+  100% {
+  
       height: $panel-min-height - $header-height - 1.5vh;
-    }
+    
   }
 }
 
